@@ -25,6 +25,8 @@ export class EditKegComponent {
     }
     if(this.selectedKeg.pintsRemaining !== 0) {
       this.selectedKeg.empty = false;
+    } else if (this.selectedKeg.pintsRemaining == 0) {
+      this.selectedKeg.empty = true;
     }
   }
 }
