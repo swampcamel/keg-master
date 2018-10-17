@@ -2,5 +2,6 @@
 <div style="text-align:center">
   <h1>Welcome to {{ title }}!</h1>
 </div>
-<keg-list></keg-list>
-<edit-keg></edit-keg>
+<keg-list [childKegList]="kegs"></keg-list>
+<add-keg (sendKeg)="addKeg($event)"></add-keg>
+<edit-keg [editKegList]="kegs"></edit-keg>

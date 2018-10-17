@@ -1,0 +1,24 @@
+<h2>Add Keg</h2>
+<div>
+  <label>Beer Name:</label>
+  <input #newbrewName type="text">
+</div>
+<div class="">
+  <label for="">Brewery Name:</label>
+  <input type="text" #newbreweryName>
+</div>
+<div class="">
+  <label for="">ABV:</label>
+  <input type="number" #newabv>
+</div>
+<div class="">
+  <label for="">Price:</label>
+  <input type="number" #newprice>
+</div>
+<div class="">
+  <label for="">Pints in Keg:</label>
+  <input type="number" #newpintsRemaining value="124">
+</div>
+<div class="">
+  <button (click)="enterKeg(newbrewName.value, newbreweryName.value, newabv.value, newprice.value, newpintsRemaining.value); newbrewName.value = ''; newbreweryName.value = ''; newabv.value = ''; newprice.value = ''; newpintsRemaining.value = '124';">Enter Keg</button>
+</div>

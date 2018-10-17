@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Keg } from '../models/keg.model';
 
 @Component({
   selector: 'edit-keg',
   templateUrl: './edit-keg.component.html',
   styleUrls: ['./edit-keg.component.css']
 })
-export class EditKegComponent implements OnInit {
+export class EditKegComponent {
 
-  constructor() { }
+  selectedKeg: Keg;
 
-  ngOnInit() {
+  @Input() editKegList: Keg[];
+
+
+  selectKeg(keg: Keg): void {
+    this.selectedKeg = keg;
   }
+
+  ngOnInit() {  }
 
 }

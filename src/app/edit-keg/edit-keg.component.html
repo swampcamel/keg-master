@@ -1,3 +1,13 @@
-<p>
-  edit-keg works!
-</p>
+<ul>
+  <li [class.selected]="keg === selectedKeg" *ngFor="let keg of editKegList" (click)="selectKeg(keg)">
+    <span>{{keg.brewName}}</span>
+  </li>
+</ul>
+
+<div class="editKegForm" *ngIf="selectedKeg">
+  <span>Brew Name: <input [(ngModel)]="selectedKeg.brewName" placeholder="brewName"></span>
+  <span>Brewery Name: <input [(ngModel)]="selectedKeg.breweryName" placeholder="breweryName"></span>
+  <span>ABV: <input [(ngModel)]="selectedKeg.abv" placeholder="abv" type="number"></span>
+  <span>Pints Remaining: <input [(ngModel)]="selectedKeg.pintsRemaining" placeholder="pintsRemaining" type="number"></span>
+  <span>Price: <input [(ngModel)]="selectedKeg.pricePerPint" placeholder="pricePerPint" type="number"></span>
+</div>

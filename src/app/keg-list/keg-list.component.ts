@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Keg } from '../models/keg.model';
 
 @Component({
@@ -6,12 +6,8 @@ import { Keg } from '../models/keg.model';
   templateUrl: './keg-list.component.html',
   styleUrls: ['./keg-list.component.css']
 })
-export class KegListComponent implements OnInit {
-  kegs: Keg[] = [
-    new Keg('Swivelhead Red', 'Deschutes Brewery', 6.5, 5, 6),
-    new Keg('Total Domination IPA', 'Ninkasi Brewery', 8.7, 124, 4.2),
-    new Keg('Rainier PCT IPA', 'Rainer Beer', 4.2, 124, 4)
-  ];
+export class KegListComponent {
+  @Input() childKegList: Keg[];
 
   removePint(keg) {
     if (keg.pintsRemaining === 0) {
@@ -21,6 +17,7 @@ export class KegListComponent implements OnInit {
       keg.empty = true;
     } else {
       keg.pintsRemaining -= 1;
+      keg.empty = false;
     }
   }
 
@@ -49,8 +46,4 @@ export class KegListComponent implements OnInit {
       return "bg-average " + kegClass;
     }
   }
-
-  ngOnInit() {
-  }
-
 }

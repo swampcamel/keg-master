@@ -1,4 +1,4 @@
-<ul  [class]="colorABV(keg)" *ngFor="let keg of kegs">
+<ul [class]="colorABV(keg)" *ngFor="let keg of childKegList">
   <li><h3>{{keg.brewName}} - {{keg.breweryName}} - {{keg.abv}}% ABV</h3></li>
   <div class="divider"></div>
   <div *ngIf="keg.empty"><h3 class="empty-alert">Out of Beer!</h3></div>
