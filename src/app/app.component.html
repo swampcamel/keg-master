@@ -4,4 +4,4 @@
 </div>
 <keg-list [childKegList]="kegs"></keg-list>
 <add-keg (sendKeg)="addKeg($event)"></add-keg>
-<edit-keg [editKegList]="kegs"></edit-keg>
+<edit-keg [editKegList]="kegs" [selectedKeg]="kegs[0]"></edit-keg>

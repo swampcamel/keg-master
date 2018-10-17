@@ -17,7 +17,6 @@ export class KegListComponent {
       keg.empty = true;
     } else {
       keg.pintsRemaining -= 1;
-      keg.empty = false;
     }
   }
 

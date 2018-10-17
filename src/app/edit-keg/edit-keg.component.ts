@@ -8,7 +8,7 @@ import { Keg } from '../models/keg.model';
 })
 export class EditKegComponent {
 
-  selectedKeg: Keg;
+  @Input() selectedKeg: Keg;
 
   @Input() editKegList: Keg[];
 
@@ -18,5 +18,13 @@ export class EditKegComponent {
   }
 
   ngOnInit() {  }
+  ngDoCheck(this.selectedKeg) {
+    if(this.selectedKeg.pricePerPint != parseFloat(this.selectedKeg.displayPrice)) {
+      this.selectedKeg.displayPrice = parseFloat(this.selectedKeg.pricePerPint).toFixed(2);
 
+    }
+    if(this.selectedKeg.pintsRemaining !== 0) {
+      this.selectedKeg.empty = false;
+    }
+  }
 }
