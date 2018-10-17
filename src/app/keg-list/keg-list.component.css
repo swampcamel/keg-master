@@ -1,0 +1,53 @@
+.keg-style {
+  border: dashed 2px blue;
+  list-style: none;
+  padding: 8px;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: bolder;
+  text-shadow: 1px 1px 2px #000;
+}
+.divider {
+  width: 60px;
+  border-bottom: 2px solid red;
+  margin-bottom: 24px;
+}
+
+.empty-alert {
+  color: red;
+  text-decoration: underline;
+}
+
+.default {
+  color: purple;
+}
+
+.cheap {
+  color: lightblue;
+}
+
+.spendy {
+  color: #E87F14;
+}
+
+.four-twenty {
+  color: lime;
+}
+
+.bg-four-twenty {
+  background-color: #57784F;
+}
+
+.bg-strong {
+  background-color: #BF4336;
+}
+
+.bg-weak {
+  background-color: #FF8FE6;
+}
+
+.bg-average {
+  background-color: #E8DE88;
+}

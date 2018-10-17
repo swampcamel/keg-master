@@ -1,0 +1,7 @@
+<ul  [class]="colorABV(keg)" *ngFor="let keg of kegs">
+  <li><h3>{{keg.brewName}} - {{keg.breweryName}} - {{keg.abv}}% ABV</h3></li>
+  <div class="divider"></div>
+  <div *ngIf="keg.empty"><h3 class="empty-alert">Out of Beer!</h3></div>
+  <li [class]="colorPrice(keg)">Price: ${{keg.displayPrice}}</li>
+  <li>Pints Remaining: {{keg.pintsRemaining}} <button (click)="removePint(keg)">Sell Pint</button></li>
+</ul>
