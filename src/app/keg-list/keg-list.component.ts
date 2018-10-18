@@ -7,7 +7,14 @@ import { Keg } from '../models/keg.model';
   styleUrls: ['./keg-list.component.css']
 })
 export class KegListComponent {
+
+  filterByKegs: string = "currentKegs";
+
   @Input() childKegList: Keg[];
+
+  onChange(menuOption) {
+    this.filterByKegs = menuOption;
+  }
 
   removePint(keg) {
     if (keg.pintsRemaining === 0) {

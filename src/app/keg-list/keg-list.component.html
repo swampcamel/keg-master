@@ -1,4 +1,10 @@
-<ul [class]="colorABV(keg)" *ngFor="let keg of childKegList">
+<select (change)="onChange($event.target.value)">
+  <option value="allKegs">All Kegs</option>
+  <option value="emptyKegs">Empty Kegs</option>
+  <option value="currentKegs" selected="selected">Current Kegs</option>
+</select>
+
+<ul [class]="colorABV(keg)" *ngFor="let keg of childKegList | filterKegs:filterByKegs">
   <li><h3>{{keg.brewName}} - {{keg.breweryName}} - {{keg.abv}}% ABV</h3></li>
   <div class="divider"></div>
   <div *ngIf="keg.empty"><h3 class="empty-alert">Out of Beer!</h3></div>

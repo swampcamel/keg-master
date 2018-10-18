@@ -18,7 +18,7 @@ export class EditKegComponent {
   }
 
   ngOnInit() {  }
-  ngDoCheck(this.selectedKeg) {
+  ngDoCheck(this) {
     if(this.selectedKeg.pricePerPint != parseFloat(this.selectedKeg.displayPrice)) {
       this.selectedKeg.displayPrice = parseFloat(this.selectedKeg.pricePerPint).toFixed(2);
 
